@@ -1,11 +1,11 @@
 import React from "react";
 import "./HomePage.css";
-import Sliders from "./Sliders/Sliders";
+import Banners from "./Sliders/Banners";
 
 const HomePage = () => {
   return (
     <div>
-      <Sliders></Sliders>
+      <Banners></Banners>
     </div>
   );
 };
