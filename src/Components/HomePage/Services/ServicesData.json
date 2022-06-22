@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Vidyaranya Malladi",
+        "userImage": "https://images-eu.ssl-images-amazon.com/images/S/amazon-avatars-global/e2208c13-7bb1-4197-85d7-c13323a12553._CR0,171,1854,1854_SX460_.jpg",
+        "review_message": "Product is nice and right on time delivery. Picture quality is nice. Given the price best product and nice feature set", 
+        "rating": 5
+    },
+    {
+        "id": 2,
+        "name": "Hasan Kabir",
+        "userImage": "https://images-eu.ssl-images-amazon.com/images/S/amazon-avatars-global/87729707-fd1c-4482-8771-259dc6804b54._CR0,0,375,375_UX460_.jpg",
+        "review_message": "Good value for the price! Think its just HD ready, but the picture is of satisfactory quality. Chromecast function correctly, although there were some trouble at the very beginning. Might be just the update.", 
+        "rating": 5
+    },  
+    {
+        "id": 3,
+        "name": "Sandra Lein",
+        "userImage": "https://images-eu.ssl-images-amazon.com/images/S/amazon-avatars-global/3b8348fe-4871-4606-b14d-fb1a06c3aeaa._CR0,0,500,500_SX460_.jpg",
+        "review_message": "have given 4 rating although I am extremely satisfied with this product but the only negative thing I feel for now is the sound surroundings", 
+        "rating": 4
+    },
+    {
+        "id": 4,
+        "name": "Franck Muller",
+        "userImage": "https://images-eu.ssl-images-amazon.com/images/S/amazon-avatars-global/1bd0b50d-a754-4f4c-8570-d738f5374b8c._CR77,0,345,345_SX460_.jpg",
+        "review_message": "This was a terrible choice to begin with. The TV arrived safely, once we turned it on it was ok (not a Samsung, but okay) in terms of video. After 15 minutes of being turned on, a high-pitched noise appeared and it stayed all the time the TV was turned on. It was impossible to watch it.", 
+        "rating": 3
+    },
+    {
+        "id": 5,
+        "name": "Hansi",
+        "userImage": "https://images-eu.ssl-images-amazon.com/images/S/amazon-avatars-global/fa8f7ece-2a95-40a9-805c-25caa1eb5a8f._CR128,0,768,768_SX460_.jpg",
+        "review_message": "The TV is good for the price, with the built in android , however there is some apps not allowed on the TV if you are in Germany and want to use it for run some local ip tv app.", 
+        "rating": 4
+    },
+    {
+        "id": 6,
+        "name": "Sirkinti",
+        "userImage": "https://images-eu.ssl-images-amazon.com/images/S/amazon-avatars-global/3fb69588-888f-418c-897e-2af9dd9aa61c._CR0,0,640,640_SX460_.jpg",
+        "review_message": "A very nice television can only say that Xiamio has done a very good job can only recommend", 
+        "rating": 5
+    }
+]
