@@ -1,0 +1,17 @@
+.about .card-body img {
+	width: 30%;
+} 
+.about .card{
+    max-width: 576px;
+  } 
+
+.map{
+    max-height: 400px;
+    max-width: 70%;
+    border: 2px solid red;
+    margin: 0 auto; 
+    overflow: hidden;
+}
+
+
+  
