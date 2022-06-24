@@ -11,15 +11,18 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
     useSignInWithGoogle(auth);
   const createUser = (e) => {
     createUserWithEmailAndPassword(email, password);
     e.preventDefault();
   };
-  console.log(userGoogle);
-  const googleSingIN = () => {};
+  const googleSignIN = (e) => {
+    signInWithGoogle();
+    e.preventDefault();
+  };
+  console.log("userGoogle", userGoogle);
   return (
     <div className="sigup bg-light">
       <h2 className="text-center pt-4">
@@ -54,24 +57,9 @@ const Signup = () => {
             onBlur={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-check mt-2 mb-3">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label" for="exampleCheck1">
-            Check me out
-          </label>
-        </div>
-        <p>
-          {error || errorGoogle ? (
-            <p> {error.message || errorGoogle.message}</p>
-          ) : (
-            ""
-          )}
-        </p>
-        <p>{user ? <p> {user.user.email} user create sucessfully</p> : ""}</p>
+        <p>{error ? <p> {error.message}</p> : ""}</p>
+        <p>{errorGoogle ? <p> {errorGoogle.message}</p> : ""}</p>
+        <p>{user || userGoogle ? <p> user create sucessfully</p> : ""}</p>
         <input
           type="submit"
           className="btn btn-primary mb-5"
@@ -79,7 +67,7 @@ const Signup = () => {
           value="Sign up"
         />
         <br />
-        <button className="btn btn-success googleSignIN" onClick={googleSingIN}>
+        <button className="btn btn-success googleSignIN" onClick={googleSignIN}>
           <img
             src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
             alt="logo"

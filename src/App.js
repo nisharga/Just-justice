@@ -9,6 +9,7 @@ import NotFound from "./Components/Shared/NotFound/NotFound";
 import Signup from "./Components/Signup/Signup";
 import Checkout from "./Components/Shared/Checkout/Checkout";
 import Login from "./Components/Login/Login";
+import RequireAuth from "./Hooks/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -19,7 +20,14 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="about" element={<About />} />
-        <Route path="checkout" element={<Checkout />} />
+        <Route
+          path="checkout"
+          element={
+            <RequireAuth>
+              <Checkout />
+            </RequireAuth>
+          }
+        />
         <Route path="login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
