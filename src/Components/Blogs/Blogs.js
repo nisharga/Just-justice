@@ -26,6 +26,7 @@ const Blogs = () => {
   ];
   return (
     <div className="blog-container bg-light pt-3 pb-2">
+      <h2 className="text-center">Blogs</h2>
       <div className="container">
         <div className="row">
           {BlogsALL.map((blogs) => (

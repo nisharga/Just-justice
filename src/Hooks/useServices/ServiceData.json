@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "lawyer for contracts, agreements, terms and conditions",
+        "image": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/171742920/original/50a125606df0022681f785fe79ac54605a58475b/draft-privacy-policy-terms-and-conditions-disclaimer-gdpr.png",
+        "service_details": "legal attorney to draft the following legal documents: Terms and conditions, privacy policy, GDPR policy, Contracts and agreements, refund policy, shipping policy, cookies policy or disclaimer", 
+        "price": 90
+    }, 
+    {
+        "id": 2,
+        "title": "lawyer for Child Custody, Corporate agreements",
+        "image": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/221728602/original/f090b0b11d00493ad86f5c3af055dd53c1c0b380/legal-contracts-agreements-legal-documents-as-a-lawyer.jpg",
+        "service_details": "legal documents, agreements and contracts to help you protect your personal and business interest(dependable, and rational custom legal contracts, legal documents, and case briefs agreements)", 
+        "price": 110
+    }, 
+    {
+        "id": 3,
+        "title": "lawyer for Contracts, Copyright agreements",
+        "image": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/165760540/original/e94bfe8c5b0863dc0f30f232cf6d9a727402eafc/write-a-legal-contract.png",
+        "service_details": "legally enforceable written contract or agreement that is watertight, professional five years experience and solid with any provisions you like", 
+        "price": 70
+    }
+]

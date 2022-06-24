@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CustomLink from "../CustomLink/CustomLink";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faScaleBalanced } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
   return (
@@ -11,7 +13,7 @@ const Nav = () => {
             <nav className="navbar navbar-expand-lg navbar-light">
               <div className="container-fluid">
                 <Link to="/" className="navbar-brand">
-                  Just Justice
+                  Just Justice <FontAwesomeIcon icon={faScaleBalanced} />
                 </Link>
                 <button
                   className="navbar-toggler"
@@ -35,11 +37,6 @@ const Nav = () => {
                       </CustomLink>
                     </li>
                     <li className="nav-item">
-                      <CustomLink to="/signup" className="nav-link">
-                        Signup
-                      </CustomLink>
-                    </li>
-                    <li className="nav-item">
                       <CustomLink to="/blogs" className="nav-link">
                         Blogs
                       </CustomLink>
@@ -47,6 +44,16 @@ const Nav = () => {
                     <li className="nav-item">
                       <CustomLink to="/about" className="nav-link">
                         About Us
+                      </CustomLink>
+                    </li>
+                    <li className="nav-item">
+                      <CustomLink to="/signup" className="nav-link">
+                        Signup
+                      </CustomLink>
+                    </li>
+                    <li className="nav-item">
+                      <CustomLink to="/login" className="nav-link">
+                        Login
                       </CustomLink>
                     </li>
                   </ul>

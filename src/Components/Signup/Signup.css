@@ -1,0 +1,20 @@
+.sigup{
+    margin-bottom: -70px !important;
+}
+
+form {
+    max-width: 600px;
+    margin: 65px auto;
+}
+
+.googleSignIN {
+    margin-top: -15px;
+    margin-bottom: 30px; 
+    width: 100%;
+}
+
+.googleSignIN img {
+    width: 30px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}

@@ -4,3 +4,26 @@
 .singleService{
     padding: 20px;
 }
+
+.singleService h5 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+.singleService h4 {
+  margin-top: 13px; 
+}
+
+.singleService {
+  padding: 25px;
+}
+
+.singleService img {
+  height: 200px;
+}
+
+
+@media only screen and (max-width: 576px) {
+  .singleService h5 {
+      font-size: 20px;
+  }
+}
