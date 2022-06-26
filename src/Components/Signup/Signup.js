@@ -60,7 +60,13 @@ const Signup = () => {
         </div>
         <p>{error ? <p> {error.message}</p> : ""}</p>
         <p>{errorGoogle ? <p> {errorGoogle.message}</p> : ""}</p>
-        <p>{user || userGoogle ? <p> user create sucessfully</p> : ""}</p>
+        <p>
+          {user || userGoogle ? (
+            <p> user create sucessfully, (Check Email for Verify)</p>
+          ) : (
+            ""
+          )}
+        </p>
         <p>
           Already Have an account <Link to="/login">Log in</Link>
         </p>

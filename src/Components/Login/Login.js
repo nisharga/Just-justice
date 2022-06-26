@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Login.css";
 import auth from "./../../Hooks/Firebase/Config";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
+  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -11,23 +12,36 @@ import {
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [signInWithEmailAndPassword, user, loading, error] =
+  // sign In with email pass
+  const [signInWithEmailAndPassword, userEmailPass, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  // sign In with google
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
     useSignInWithGoogle(auth);
+  // sign handle
   const loginUsr = (e) => {
     signInWithEmailAndPassword(email, password);
     e.preventDefault();
   };
+  // sign In google handle
   const googleSignIN = (e) => {
     signInWithGoogle();
     e.preventDefault();
   };
+  // Reset Password
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const handlePassForget = (e) => {
     sendPasswordResetEmail(email);
     e.preventDefault();
   };
+  // Redirect to that from page
+  let navigate = useNavigate();
+  let location = useLocation();
+  const [user] = useAuthState(auth);
+  let from = location.state?.from?.pathname || "/";
+  if (user) {
+    navigate(from, { replace: true });
+  }
   return (
     <div className="login bg-light">
       <h2 className="text-center pt-4">
@@ -61,11 +75,14 @@ const Login = () => {
             id="exampleInputPassword1"
             placeholder="Password"
             onBlur={(e) => setPassword(e.target.value)}
+            required
           />
         </div>
         <p>{error ? <p> {error?.message}</p> : ""}</p>
         <p>{errorGoogle ? <p> {errorGoogle?.message}</p> : ""}</p>
-        <p>{user || userGoogle ? <p>user Login sucessfully</p> : ""}</p>
+        <p>
+          {userEmailPass || userGoogle ? <p>user Login sucessfully</p> : ""}
+        </p>
         <p>
           Do not Have an account <Link to="/signup">Sign up</Link>
         </p>
