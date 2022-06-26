@@ -23,7 +23,7 @@ function App() {
         <Route
           path="checkout"
           element={
-            <RequireAuth>
+            <RequireAuth redirectTo="/login">
               <Checkout />
             </RequireAuth>
           }

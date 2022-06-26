@@ -1,10 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import CustomLink from "../CustomLink/CustomLink";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faScaleBalanced } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+import auth from "../../../Hooks/Firebase/Config";
+import CustomLink from "../CustomLink/CustomLink";
 
 const Nav = () => {
+  const [user] = useAuthState(auth);
   return (
     <div className="header bg-light">
       <div className="container">
@@ -46,6 +48,13 @@ const Nav = () => {
                         About Us
                       </CustomLink>
                     </li>
+
+                    <li className="nav-item">
+                      <CustomLink to="/signup" className="nav-link">
+                        SignOut
+                      </CustomLink>
+                    </li>
+
                     <li className="nav-item">
                       <CustomLink to="/signup" className="nav-link">
                         Signup

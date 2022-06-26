@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Login.css";
 import auth from "./../../Hooks/Firebase/Config";
+import { Link } from "react-router-dom";
 import {
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -21,14 +23,18 @@ const Login = () => {
     signInWithGoogle();
     e.preventDefault();
   };
-  console.log("userGoogle", userGoogle);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  const handlePassForget = (e) => {
+    sendPasswordResetEmail(email);
+    e.preventDefault();
+  };
   return (
     <div className="login bg-light">
       <h2 className="text-center pt-4">
         SIGNIN
         {loading || loadingGoogle ? (
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
           </div>
         ) : (
           ""
@@ -44,6 +50,7 @@ const Login = () => {
             aria-describedby="emailHelp"
             placeholder="Enter email"
             onBlur={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className="form-group mt-3">
@@ -59,6 +66,16 @@ const Login = () => {
         <p>{error ? <p> {error?.message}</p> : ""}</p>
         <p>{errorGoogle ? <p> {errorGoogle?.message}</p> : ""}</p>
         <p>{user || userGoogle ? <p>user Login sucessfully</p> : ""}</p>
+        <p>
+          Do not Have an account <Link to="/signup">Sign up</Link>
+        </p>
+        <p>
+          Forget Password? Type Email and
+          <button className="btn" onClick={handlePassForget}>
+            Click Here to Verify
+          </button>
+        </p>
+
         <input
           type="submit"
           className="btn btn-primary mb-5 mt-3"

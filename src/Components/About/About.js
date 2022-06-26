@@ -2,8 +2,12 @@ import React from "react";
 import photo from "./blank_profile.jpg";
 import "./About.css";
 import LeafletMap from "./leafletMap/LeafletMap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Hooks/Firebase/Config";
 
 const About = () => {
+  const [user] = useAuthState(auth);
+  console.log("user", user.email);
   return (
     <div className="about bg-light pt-4 pb-4">
       <h2 className="text-center mb-4">About Me</h2>

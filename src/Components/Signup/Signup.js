@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./Signup.css";
 import auth from "./../../Hooks/Firebase/Config";
+import { Link } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
@@ -60,6 +61,9 @@ const Signup = () => {
         <p>{error ? <p> {error.message}</p> : ""}</p>
         <p>{errorGoogle ? <p> {errorGoogle.message}</p> : ""}</p>
         <p>{user || userGoogle ? <p> user create sucessfully</p> : ""}</p>
+        <p>
+          Already Have an account <Link to="/login">Log in</Link>
+        </p>
         <input
           type="submit"
           className="btn btn-primary mb-5"
@@ -67,6 +71,7 @@ const Signup = () => {
           value="Sign up"
         />
         <br />
+
         <button className="btn btn-success googleSignIN" onClick={googleSignIN}>
           <img
             src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
