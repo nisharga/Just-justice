@@ -13,8 +13,13 @@
   margin-top: 13px; 
 }
 
+.singleService:hover {
+  transform: scale(1);
+}
 .singleService {
   padding: 25px;
+  transform: scale(0.90);
+  transition: 0.3s;
 }
 
 .singleService img {

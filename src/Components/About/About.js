@@ -1,9 +1,6 @@
-import React from "react";
-import photo from "./blank_profile.jpg";
 import "./About.css";
+import photo from "./blank_profile.jpg";
 import LeafletMap from "./leafletMap/LeafletMap";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../Hooks/Firebase/Config";
 
 const About = () => {
   return (

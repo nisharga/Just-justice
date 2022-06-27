@@ -29,9 +29,24 @@ const Login = () => {
     e.preventDefault();
   };
   // Reset Password
-  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sendingSendPasswordResetEmail] =
+    useSendPasswordResetEmail(auth);
+  let resetPasswordResetToast;
   const handlePassForget = (e) => {
     sendPasswordResetEmail(email);
+    resetPasswordResetToast = `<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="...">
+      <strong class="mr-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>`;
     e.preventDefault();
   };
   // Redirect to that from page
@@ -59,13 +74,14 @@ const Login = () => {
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
+            name="exampleInputEmail1"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter email"
             onBlur={(e) => setEmail(e.target.value)}
             required
-          />
+          ></input>
         </div>
         <div className="form-group mt-3">
           <label htmlFor="exampleInputPassword1">Password</label>
@@ -73,6 +89,7 @@ const Login = () => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
+            name="exampleInputPassword1"
             placeholder="Password"
             onBlur={(e) => setPassword(e.target.value)}
             required
@@ -92,7 +109,7 @@ const Login = () => {
             Click Here to Verify
           </button>
         </p>
-
+        {resetPasswordResetToast}
         <input
           type="submit"
           className="btn btn-primary mb-5 mt-3"
