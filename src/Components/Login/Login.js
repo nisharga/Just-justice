@@ -8,6 +8,8 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,24 +31,11 @@ const Login = () => {
     e.preventDefault();
   };
   // Reset Password
-  const [sendPasswordResetEmail, sendingSendPasswordResetEmail] =
-    useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   let resetPasswordResetToast;
   const handlePassForget = (e) => {
     sendPasswordResetEmail(email);
-    resetPasswordResetToast = `<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
-    <div class="toast-header">
-      <img src="..." class="rounded mr-2" alt="...">
-      <strong class="mr-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
-  </div>`;
+    toast("Password reset, Check Email!!");
     e.preventDefault();
   };
   // Redirect to that from page
@@ -59,6 +48,7 @@ const Login = () => {
   }
   return (
     <div className="login bg-light">
+      <ToastContainer />
       <h2 className="text-center pt-4">
         SIGNIN
         {loading || loadingGoogle ? (
@@ -110,6 +100,7 @@ const Login = () => {
           </button>
         </p>
         {resetPasswordResetToast}
+
         <input
           type="submit"
           className="btn btn-primary mb-5 mt-3"
