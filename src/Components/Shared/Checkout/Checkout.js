@@ -3,13 +3,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../../Hooks/Firebase/Config";
 import "./Checkout.css";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Checkout = () => {
   let { id } = useParams();
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const handleform = () => {
-    alert("hello");
-    <Navigate to="/about" replace={true} />;
+    alert("thank you for the booking....");
+    navigate("/");
   };
   return (
     <div className="bg-light checkout d-flex justify-content-center">
@@ -32,13 +33,13 @@ const Checkout = () => {
           </label>
           <label for="field1">
             <span>
-              Name <span class="required">*</span>
+              User Name <span class="required">*</span>
             </span>
-            <input type="text" class="input-field" name="field1" value="" />
+            <input type="text" class="input-field" name="field1" />
           </label>
           <label for="field2">
             <span>
-              Email <span class="required">*</span>
+              Email Address <span class="required">*</span>
             </span>
             <input
               type="text"
@@ -47,12 +48,17 @@ const Checkout = () => {
               value={user?.email}
             />
           </label>
-
-          <label for="field5">
+          <label for="field3">
             <span>
-              Message <span class="required">*</span>
+              Address <span class="required">*</span>
             </span>
-            <textarea name="field5" class="textarea-field"></textarea>
+            <input type="text" class="input-field" name="field3" />
+          </label>
+          <label for="field4">
+            <span>
+              Phone <span class="required">*</span>
+            </span>
+            <input type="text" class="input-field" name="field4" />
           </label>
 
           <label>
