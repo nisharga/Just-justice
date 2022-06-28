@@ -11,7 +11,6 @@ import "./Nav.css";
 
 const Nav = () => {
   const [user] = useAuthState(auth);
-  console.log("🚀 ~ file: Nav.js ~ line 10 ~ Nav ~ user", user);
   const handleSignOut = () => {
     signOut(auth);
   };

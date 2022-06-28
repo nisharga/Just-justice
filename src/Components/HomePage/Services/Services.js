@@ -5,7 +5,6 @@ import UseServices from "./../../../Hooks/useServices/UseServices";
 
 const Services = () => {
   const [services] = UseServices();
-  console.log("services", services);
   return (
     <div className="services">
       <div className="container">

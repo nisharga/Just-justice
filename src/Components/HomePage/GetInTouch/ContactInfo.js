@@ -1,5 +1,11 @@
 import React from "react";
 import styles from "./GetInTouch.module.css";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faMobilePhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import "./ContactInfo.css";
 
 const ContactInfo = () => {
   return (
@@ -10,41 +16,17 @@ const ContactInfo = () => {
         details.
       </p>
       <div className={styles.info}>
-        <div className="social-information">
-          <i className="fa fa-map-marker"></i>
+        <div className="social-information d-flex">
+          <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>
           <p>NPM,NY,USA</p>
         </div>
-        <div className="social-information">
-          {" "}
-          <i className="fa fa-envelope-o"></i>
+        <div className="social-information d-flex">
+          <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
           <p>contact@bbbootstrap.com</p>
         </div>
-        <div className="social-information">
-          {" "}
-          <i className="fa fa-mobile-phone"></i>
+        <div className="social-information d-flex">
+          <FontAwesomeIcon icon={faMobilePhone}></FontAwesomeIcon>
           <p>+1 989 989 9898 </p>
-        </div>
-      </div>
-      <div className="social-media">
-        <p>Connect with us :</p>
-        <div className="social-icons">
-          {" "}
-          <a href="#">
-            {" "}
-            <i className="fa fa-facebook-f"></i>{" "}
-          </a>{" "}
-          <a href="#">
-            {" "}
-            <i className="fa fa-twitter"></i>{" "}
-          </a>{" "}
-          <a href="#">
-            {" "}
-            <i className="fa fa-instagram"></i>{" "}
-          </a>{" "}
-          <a href="#">
-            {" "}
-            <i className="fa fa-linkedin"></i>{" "}
-          </a>{" "}
         </div>
       </div>
     </div>
